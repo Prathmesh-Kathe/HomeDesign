@@ -580,8 +580,10 @@
 }
 
 #panel {
-    touch-action: none;
-    -webkit-touch-action: none;
+  touch-action: auto;              /* allow scrolling and touch gestures */
+  -webkit-touch-action: auto;      /* for iOS/Safari */
+  overflow-y: auto;                /* enable vertical scrolling */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
 }
 
 /* Remove tap highlight on mobile */
@@ -623,4 +625,5 @@ svg * {
         height: 16px;
     }
 }
+
 
