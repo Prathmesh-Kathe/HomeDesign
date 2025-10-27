@@ -626,4 +626,130 @@ svg * {
     }
 }
 
+#lin {
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
+.circle_css, .circle_css_1, .circle_css_2 {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Enhanced wall path styling */
+#boxwall path {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#boxwall path:hover {
+    stroke: #ff6666 !important;
+    stroke-width: 14 !important;
+    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.4));
+}
+
+/* Info box animation */
+#boxinfo {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Snap indicator */
+.snap-indicator {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #00ff00;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.7;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+}
+
+/* Touch targets for mobile */
+@media (max-width: 768px) {
+    #boxwall path {
+        stroke-width: 16 !important;
+    }
+}
+
+
+/* Text Editor Styles */
+#boxText text {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#boxText text:hover {
+    fill: #08d !important;
+    filter: drop-shadow(0 0 3px rgba(0, 136, 221, 0.5));
+}
+
+/* Edit box animations */
+#textEditBox {
+    animation: editBoxFadeIn 0.2s ease;
+}
+
+@keyframes editBoxFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Textarea focus */
+#textEditInput:focus {
+    outline: none;
+    border-color: #4b79aa;
+    box-shadow: 0 0 5px rgba(75, 121, 170, 0.3);
+}
+
+/* Button styling in edit box */
+#textEditBox .btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#textEditBox .btn-primary {
+    background: #4b79aa;
+    color: white;
+}
+
+#textEditBox .btn-primary:hover {
+    background: #3a5f85;
+}
+
+#textEditBox .btn-light {
+    background: #f0f0f0;
+    color: #333;
+}
+
+#textEditBox .btn-light:hover {
+    background: #e0e0e0;
+}
+
+#textEditBox .btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+#textEditBox .btn-danger:hover {
+    background: #c82333;
+}

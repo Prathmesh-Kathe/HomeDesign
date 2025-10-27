@@ -88,9 +88,7 @@
     }
     
     /* Controls above SVG */
-    #moveBox, #zoomBox {
-      z-index: 10001 !important;
-    }
+  
     
     .leftBox {
       z-index: 10000 !important;
@@ -469,6 +467,10 @@
       <br />
       
       <li><button class="btn btn-light shadow fully" id="layer_mode">Layers</button></li>
+
+      <br />
+<li><button class="btn btn-light shadow fully" id="reload_page" title="Reload Page"><i class="fa fa-refresh" aria-hidden="true"></i> RELOAD</button></li>
+
       
       <li><button class="btn btn-light shadow halfy" id="report_mode" title="Show report"><i class="fa fa-calculator"
             aria-hidden="true"></i></button>
@@ -567,7 +569,7 @@
       <div class="modal-content">
         <div class="modal-header">
 
-          <h4 class="modal-title" id="myModalLabel">Welcome Home Rough Editor v0.95</h4>
+          <h4 class="modal-title" id="myModalLabel">Welcome Editor</h4>
         </div>
         <div class="modal-body m-2">
           <div id="recover">
@@ -694,7 +696,7 @@
 <!-- <script src="MobileEngine.js"></script> -->
 <!-- <script src="newEditor.js"></script> -->
 
-<!-- <script src="touchHandler.js"></script> -->
+<script src="element.js"></script>
 
 
 
@@ -702,6 +704,7 @@
 <!-- Your scripts -->
 <script src="func.js"></script>
 <script src="qSVG.js"></script>
+
 <script src="editor.js"></script>
 <script src="engine.js"></script>
 
@@ -785,3 +788,8 @@ console.log(window.InputAdapter.getVelocity());
 </script>
 
 </html>
+
+
+
+
+

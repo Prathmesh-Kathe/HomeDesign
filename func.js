@@ -950,14 +950,36 @@ for (let k = 0; k < zoomBtn.length; k++) {
     })
 }
 
+// let roomColorBtn = document.querySelectorAll(".roomColor");
+// for (let k = 0; k < roomColorBtn.length; k++) {
+//     roomColorBtn[k].addEventListener("click", function () {
+//         let data = this.getAttribute('data-type');
+//         $('#roomBackground').val(data);
+//         binder.attr({ 'fill': 'url(#' + data + ')' });
+//     });
+// }
+
 let roomColorBtn = document.querySelectorAll(".roomColor");
 for (let k = 0; k < roomColorBtn.length; k++) {
     roomColorBtn[k].addEventListener("click", function () {
         let data = this.getAttribute('data-type');
         $('#roomBackground').val(data);
-        binder.attr({ 'fill': 'url(#' + data + ')' });
+        
+        // Apply color to border (stroke) only, not fill
+        if (data.startsWith('gradient') || data === 'wood' || data === 'tiles' || data === 'granite' || data === 'grass') {
+            binder.attr('stroke', 'url(#' + data + ')');
+            binder.attr('stroke-width', '4');
+            binder.attr('fill', 'none'); // Keep interior transparent
+        } else {
+            // For solid colors
+            binder.attr('stroke', data);
+            binder.attr('stroke-width', '4');
+            binder.attr('fill', 'none');
+        }
     });
 }
+
+
 
 let objTrashBtn = document.querySelectorAll(".objTrash");
 for (let k = 0; k < objTrashBtn.length; k++) {
@@ -2194,4 +2216,10 @@ document.getElementById("togglePanel").addEventListener("click", function() {
 });
 
 
+
+// Reload button handler
+$('#reload_page').on('click', function(e) {
+    e.preventDefault();
+    history.go(0); // Same effect as location.reload()
+});
 
